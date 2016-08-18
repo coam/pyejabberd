@@ -3,7 +3,7 @@ from __future__ import unicode_literals, print_function
 import os
 import sys
 
-from pyejabberd.compat import TestCase, skipIf
+from pyejabberd.compat import TestCase, skipIf, run_unittests
 
 from pyejabberd import EjabberdAPIClient
 from pyejabberd.defaults import XMLRPC_API_PORT
@@ -15,11 +15,11 @@ from pyejabberd.muc.enums import AllowVisitorPrivateMessage, Affiliation
 from pyejabberd.utils import format_password_hash_md5, format_password_hash_sha
 from pyejabberd.contrib import ejabberd_testserver_is_up
 
-HOST = os.environ.get('PYEJABBERD_TESTS_HOST', 'localhost')
+HOST = os.environ.get('PYEJABBERD_TESTS_HOST', '47.90.15.40')
 PORT = int(os.environ.get('PYEJABBERD_TESTS_PORT', 4560))
-USERNAME = os.environ.get('PYEJABBERD_TESTS_USERNAME', 'admin')
-PASSWORD = os.environ.get('PYEJABBERD_TESTS_PASSWORD', 'admin')
-XMPP_DOMAIN = os.environ.get('PYEJABBERD_TESTS_XMPP_DOMAIN', 'example.com')
+USERNAME = os.environ.get('PYEJABBERD_TESTS_USERNAME', 'zyf')
+PASSWORD = os.environ.get('PYEJABBERD_TESTS_PASSWORD', '123456')
+XMPP_DOMAIN = os.environ.get('PYEJABBERD_TESTS_XMPP_DOMAIN', 'coopens.com')
 MUC_SERVICE = os.environ.get('PYEJABBERD_TESTS_MUC_SERVICE', 'conference')
 PROTOCOL = os.environ.get('PYEJABBERD_TESTS_PROTOCOL', 'http')
 VERBOSE = int(os.environ.get('PYEJABBERD_TESTS_VERBOSE', 0)) == 1
