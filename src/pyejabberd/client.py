@@ -119,7 +119,8 @@ class EjabberdAPIClient(contract.EjabberdAPIContract):
         return {
             'user': self.username,
             'server': self.user_domain,
-            'password': self.password
+            'password': self.password,
+            'admin': True
         }
 
     def echo(self, sentence):
@@ -393,7 +394,7 @@ class EjabberdAPIClient(contract.EjabberdAPIContract):
         :rtype: Iterable
         :return: A list of user's contacts
         """
-        return self._call_api(definitions.GetRoster, user=user, host=host)
+        return self._call_api(definitions.GetRoster, user=user, server=host)
 
     def _validate_and_serialize_arguments(self, api, arguments):
         """
