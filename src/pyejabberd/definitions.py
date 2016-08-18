@@ -136,7 +136,7 @@ class CreateRoom(API):
 
 class DestroyRoom(API):
     method = 'destroy_room'
-    arguments = [StringArgument('name'), StringArgument('service'), StringArgument('host')]
+    arguments = [StringArgument('name'), StringArgument('service')]
 
     def transform_response(self, api, arguments, response):
         return response.get('res') == 0
